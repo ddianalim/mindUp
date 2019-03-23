@@ -11,6 +11,13 @@ a {
   padding: 25em;
 }
 
+/* Nav Bar */
+
+.username {
+  margin-right: 1em;
+}
+
+
 /* Index page */
 .typer, .title {
   color: white!important;
