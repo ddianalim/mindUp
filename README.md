@@ -36,7 +36,7 @@ Day
 ## Other
 - mongodb
 - express
-- bootstrap
+- Semantic UI
 
 ## Extra Features
 - multiple users
