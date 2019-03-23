@@ -49,4 +49,14 @@ router.get('/logout', (req, res, next) => {
   return res.redirect('/');
 });
 
+/* GET days index. */
+router.get('/days', function(req, res, next) {
+  res.render('days/index');
+});
+
+/* GET days new. */
+router.get('/days/new', function(req, res, next) {
+  res.render('days/new');
+});
+
 module.exports = router;
