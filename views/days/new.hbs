@@ -1,0 +1,212 @@
+<body>
+  <style type="text/css">
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+  <div class="section cover">
+    <div class="col justify-content-center text-center">
+      <h1 class="hello">
+        Welcome back! Today is
+        <script>
+          var today = new Date(), dd = today.getDate(), mm = today.getMonth() + 1, month = '', yyyy = today.getFullYear();
+          if (mm == 1) { month = 'January'; } else if (mm == 2) { month = 'February'; } else if (mm == 3) { month = 'March';
+          } else if (mm == 4) { month = 'April'; } else if (mm == 5) { month = 'May'; } else if (mm == 6) { month = 'June';
+          } else if (mm == 7) { month = 'July'; } else if (mm == 8) { month = 'August'; } else if (mm == 9) { month = 'September';
+          } else if (mm == 10) { month = 'October'; } else if (mm == 11) { month = 'November'; } else { month = 'December';}
+          today = month + ' ' + dd + ', ' + yyyy;
+          document.write(today);
+        </script>
+      </h1>
+      <a class="button text-center show-more" href="#breathe" style="padding-top: 14em;"><h4>▼</h4></a>
+    </div>
+  </div>
+
+  <div class="section first-section" id="breathe">
+    <div class="col justify-content-center text-center">
+      <div id="progress">
+        <div id="bar"></div>
+      </div>
+      <h2>Breathe</h2>
+      <h1><time class="text-center count" style="font-size: .9em">01:00</time></h1>
+      <div class="circle"></div>
+      <!-- <h3 style="color: white; font-size: .9em; padding-top:1em;">Research shows that regularly performing breathing exercises will alleviate stress</h3> -->
+      <a class="button text-center show-more" href="#mindfulness" style="margin: 2em;"><h4>▼</h4></a>
+    </div>
+  </div>
+  <div class="section second-section" id="mindfulness">
+    <div class="col justify-content-center text-center">
+      <h2 style="margin-top: 1em!important;">Mindfulness</h2>
+    </div>
+    <form method="POST" action="/days">
+      <div class="some-margin">
+        <div class="form-group col-4 col-lg-6 mx-auto">
+          <label for="mindfulness">How are you feeling today?</label>
+          <select name="mindfulness" id="mindfulness" class="form-control">
+              <option value="9DE09E">Happy :D</option>
+              <option value="CFE9AA">Pretty good :)</option>
+              <option value="F6F0B3">Alright :|</option>
+              <option value="F4C4A4">Not good :(</option>
+              <option value="EE9E92">Terrible :'(</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+           <label for="feeling">I feel this way because...</label>
+           <textarea name="feeling" class="form-control" id="feeling" rows="2"></textarea>
+        </div>
+
+        <div class="form-group">
+           <label for="aspiration">Today I aspire to...</label>
+           <textarea name="aspiration" class="form-control" id="aspiration" rows="2"></textarea>
+        </div>
+
+      </div>
+      <a class="button text-center show-more" href="#gratitude" style="margin: 4em 50% 2em;"><h4>▼</h4></a>
+  </div>
+
+  <div class="section third-section" id="gratitude">
+    <div class="col justify-content-center text-center">
+        <h2>Gratitude</h2>
+    </div>
+
+    <div class="row">
+        <div class="col">
+              <div class="some-margin">
+                 <div class="form-group" style="margin-top: -.5em">
+                    <label for="gratitude1">This made me smile...</label>
+                    <textarea name="gratitude1" class="form-control" id="gratitude1" rows="2"></textarea>
+                 </div>
+                 <div class="form-group">
+                    <label for="gratitude2">What keeps me going...</label>
+                    <textarea name="gratitude2" class="form-control" id="gratitude2" rows="2"></textarea>
+                 </div>
+                 <div class="form-group">
+                    <label for="gratitude3">I'm looking forward to...</label>
+                    <textarea name="gratitude3" class="form-control" id="gratitude3" rows="2"></textarea>
+                 </div>
+              </div>
+
+              <div class="text-center">
+                <div class="form-group">
+                  <label for="post-date">Today is:</label>
+                  <input type="date" name="date" class="input-text" id="date" placeholder="mm/dd/yyyy" required>
+                  <span class="validity"></span>
+                </div>
+                <button type="submit" class="btn btn-outline-light" style="margin-bottom: 2em;">Done</button>
+              </div>
+
+              </form>
+        </div>
+  </div>
+</body>
+
+<style>
+
+h1, h2, h4 {
+  color: white;
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.hello {
+  padding-top: 5em;
+}
+
+.cover {
+  margin-top: 30px!important;
+  background-image: linear-gradient(#ef908f, #efca8f, #f9f1b1);
+}
+
+.first-section {
+  background-image: linear-gradient(#ef908f, #f9f1b1, #96e09a);
+}
+
+.second-section {
+  background-image: linear-gradient(#f9f1b1, #96e09a, #96cde0);
+}
+
+.third-section {
+  background-image: linear-gradient(#96e09a, #96cde0, #ac96e0);
+}
+
+.section {
+  min-height: 620px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding-top: 5em;
+}
+
+.circle {
+  height: 90px;
+  width: 90px;
+  margin: 12% 0;
+  margin-left: 46.25%;
+  border-radius: 50%;
+  background-image: radial-gradient(#eee, #fff);
+  animation: circle 3.5s ease-in-out alternate infinite;
+}
+
+@keyframes circle {
+  0% { transform: translate(0, 0); }
+  100% { transform: scale(4); }
+}
+
+.form-control {
+  background-color:white;
+  border: 0px solid;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: .5em;
+}
+
+.form-control:focus {
+  outline:none!important;
+}
+
+</style>
+<script>
+  var h1 = document.getElementsByClassName('count')[0], seconds = 0, minutes = 1, t;
+  function add() {
+      if (seconds == 0) {
+        minutes--;
+        seconds=60;
+      }
+      seconds--;
+
+      h1.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+
+      if (seconds == 0 && minutes == 0) {
+        exit;
+      }
+
+      timer();
+  }
+
+  function timer() {
+      t = setTimeout(add, 1000);
+  }
+  timer();
+
+  function move() {
+    var elem = document.getElementById("bar");
+    var width = 1;
+    var id = setInterval(frame, 600);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+      } else {
+        width++;
+        elem.style.width = width + '%';
+      }
+    }
+  }
+  move();
+
+  </script>
