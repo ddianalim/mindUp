@@ -11,6 +11,40 @@ a {
   margin: 25em;
 }
 
+.some-margin {
+  margin: 50px;
+}
+
+.calendar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.calendar .item {
+  float: left;
+  flex: 1 1 calc(14.2857143%);
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.item {
+  font-size: 20px;
+}
+
+.calendar .item a {
+  font-size: 15px;
+}
+
+.calendar .item img {
+  height: 150px;
+  width: 150px;
+}
+
+.show-more {
+  display: inline-block;
+}
+
 /* Nav Bar */
 
 .username {
