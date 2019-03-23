@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 
 const UserSchema = new Schema({
   username: { type: String, required: true },
@@ -10,7 +10,7 @@ const UserSchema = new Schema({
 UserSchema.pre('save', function(next) {
   let user = this;
 
-  bcrypt.hash(user.password, 10, function (err, hash){
+  bcryptjs.hash(user.password, 10, function (err, hash){
     if (err) return next(err);
 
     user.password = hash;
@@ -28,7 +28,7 @@ UserSchema.statics.authenticate = function(username, password, next) {
         err.status = 401;
         return next(err);
       }
-      bcrypt.compare(password, user.password, function (err, result) {
+      bcryptjs.compare(password, user.password, function (err, result) {
         if (result === true) {
           return next(null, user);
         } else {
