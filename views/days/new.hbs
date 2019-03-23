@@ -18,6 +18,20 @@
   padding-top: 5em;
 }
 
+.circle {
+  height: 90px;
+  width: 90px;
+  margin: 12% 0;
+  margin-left: 46.25%;
+  border-radius: 50%;
+  background-image: radial-gradient(#eee, #fff);
+  animation: circle 3.5s ease-in-out alternate infinite;
+}
+
+@keyframes circle {
+  0% { transform: translate(0, 0); }
+  100% { transform: scale(4); }
+}
 </style>
 
 <div class="container">
