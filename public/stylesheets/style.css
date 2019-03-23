@@ -40,5 +40,6 @@ a {
 }
 
 .navbar {
-  margin:-5px!important; 
+  margin:-5px!important;
+  padding-bottom: 0px!important;
 }
