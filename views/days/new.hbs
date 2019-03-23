@@ -1,9 +1,9 @@
 <body>
   <style type="text/css">
-  html {
-    scroll-behavior: smooth;
-  }
-</style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 
   <div class="section cover">
     <div class="col justify-content-center text-center">
@@ -31,7 +31,6 @@
       <h2>Breathe</h2>
       <h1><time class="text-center count" style="font-size: .9em">01:00</time></h1>
       <div class="circle"></div>
-      <!-- <h3 style="color: white; font-size: .9em; padding-top:1em;">Research shows that regularly performing breathing exercises will alleviate stress</h3> -->
       <a class="button text-center show-more" href="#mindfulness" style="margin: 2em;"><h4>▼</h4></a>
     </div>
   </div>
@@ -103,74 +102,73 @@
 </body>
 
 <style>
+  h1, h2, h4 {
+    color: white;
+    text-align: center;
+  }
 
-h1, h2, h4 {
-  color: white;
-  text-align: center;
-}
+  a:hover {
+    text-decoration: none;
+  }
 
-a:hover {
-  text-decoration: none;
-}
+  .hello {
+    padding-top: 5em;
+  }
 
-.hello {
-  padding-top: 5em;
-}
+  .cover {
+    margin-top: 30px!important;
+    background-image: linear-gradient(#ef908f, #efca8f, #f9f1b1);
+  }
 
-.cover {
-  margin-top: 30px!important;
-  background-image: linear-gradient(#ef908f, #efca8f, #f9f1b1);
-}
+  .first-section {
+    background-image: linear-gradient(#ef908f, #f9f1b1, #96e09a);
+  }
 
-.first-section {
-  background-image: linear-gradient(#ef908f, #f9f1b1, #96e09a);
-}
+  .second-section {
+    background-image: linear-gradient(#f9f1b1, #96e09a, #96cde0);
+  }
 
-.second-section {
-  background-image: linear-gradient(#f9f1b1, #96e09a, #96cde0);
-}
+  .third-section {
+    background-image: linear-gradient(#96e09a, #96cde0, #ac96e0);
+  }
 
-.third-section {
-  background-image: linear-gradient(#96e09a, #96cde0, #ac96e0);
-}
+  .section {
+    min-height: 620px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding-top: 5em;
+  }
 
-.section {
-  min-height: 620px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0;
-  padding-top: 5em;
-}
+  .circle {
+    height: 90px;
+    width: 90px;
+    margin: 12% 0;
+    margin-left: 46.25%;
+    border-radius: 50%;
+    background-image: radial-gradient(#eee, #fff);
+    animation: circle 3.5s ease-in-out alternate infinite;
+  }
 
-.circle {
-  height: 90px;
-  width: 90px;
-  margin: 12% 0;
-  margin-left: 46.25%;
-  border-radius: 50%;
-  background-image: radial-gradient(#eee, #fff);
-  animation: circle 3.5s ease-in-out alternate infinite;
-}
+  @keyframes circle {
+    0% { transform: translate(0, 0); }
+    100% { transform: scale(4); }
+  }
 
-@keyframes circle {
-  0% { transform: translate(0, 0); }
-  100% { transform: scale(4); }
-}
+  .form-control {
+    background-color:white;
+    border: 0px solid;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: .5em;
+  }
 
-.form-control {
-  background-color:white;
-  border: 0px solid;
-  border-bottom: 2px solid #ddd;
-  margin-bottom: .5em;
-}
-
-.form-control:focus {
-  outline:none!important;
-}
-
+  .form-control:focus {
+    outline:none!important;
+  }
 </style>
+
 <script>
   var h1 = document.getElementsByClassName('count')[0], seconds = 0, minutes = 1, t;
   function add() {
