@@ -31,7 +31,7 @@ Home
 
 Day
 - GET `/day/new`
-- POST `/day/
+- POST `/day/`
 
 ## Other
 - mongodb
