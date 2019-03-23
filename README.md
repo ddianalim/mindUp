@@ -38,9 +38,12 @@ Day
 - express
 - bootstrap
 
-## Extra
+## Extra Features
 - multiple users
   - see what others are grateful for!
+- word processor that connects to resources (mental health, DoctorOnCall)
+  - Digital Owl API
+- selecting color from color picker
 - delete function
 - share function
 - edit function
