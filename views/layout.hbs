@@ -20,6 +20,15 @@
             <img src="/images/icon.png" width="27" height="27" class="d-inline-block align-center" alt="">
             Mind Up
           </a>
+
+          <div class="navbar-text">
+            {{# if currentUserId}}
+              <a class="nav-button username" href="/">{{username}}</a>
+              <a class="nav-button" href="/logout">Log Out</a>
+            {{else}}
+              <a class="nav-button" href="/login">Log In</a>
+            {{/if}}
+          </div>
         </nav>
       </header>
     <main>
