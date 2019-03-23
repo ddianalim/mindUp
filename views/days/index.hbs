@@ -1,1 +1,62 @@
-<h1>test</h1>
+<div class="some-margin">
+  <div class="post-index" style="text-align: center;">
+    <h1 class="page-title">Calendar</h1>
+  </div>
+
+  <div class="calendar">
+    <!-- <h2 class="item">Sunday</h2>
+    <h2 class="item">Monday</h2>
+    <h2 class="item">Tuesday</h2>
+    <h2 class="item">Wednesday</h2>
+    <h2 class="item">Thursday</h2>
+    <h2 class="item">Friday</h2>
+    <h2 class="item">Saturday</h2> -->
+
+   {{#each days}}
+      <div class="item">
+          <a href="/days/{{this._id}}">
+
+            <div align="center">
+              <div style="opacity: 50%; height: 100px; width: 100px; background-color: #{{this.mindfulness}};">
+              </div>
+            </div>
+
+            <script class="test">
+            console.log("{{this.mindfulness}}");
+              var today = new Date("{{this.date}}"), dd = today.getDate()+1, mm = today.getMonth() + 1, month = '', yyyy = today.getFullYear();
+              if (mm == 1) { month = 'January'; } else if (mm == 2) { month = 'February'; } else if (mm == 3) { month = 'March';
+              } else if (mm == 4) { month = 'April'; } else if (mm == 5) { month = 'May'; } else if (mm == 6) { month = 'June';
+              } else if (mm == 7) { month = 'July'; } else if (mm == 8) { month = 'August'; } else if (mm == 9) { month = 'September';
+              } else if (mm == 10) { month = 'October'; } else if (mm == 11) { month = 'November'; } else { month = 'December';}
+              today = month + ' ' + dd + ', ' + yyyy;
+              document.write(today);
+            </script>
+        </a>
+      </div>
+    {{/each}}
+
+    <div class="item">
+      <a href="/days/new">
+        <div align="center">
+          <img class="card-img" src="/images/plus.png" alt="Card image" style=" height: 100px; width: 100px;">
+        </div>
+          <script>
+            var today = new Date(), dd = today.getDate(), mm = today.getMonth() + 1, month = '', yyyy = today.getFullYear();
+            if (mm == 1) { month = 'January'; } else if (mm == 2) { month = 'February'; } else if (mm == 3) { month = 'March';
+            } else if (mm == 4) { month = 'April'; } else if (mm == 5) { month = 'May'; } else if (mm == 6) { month = 'June';
+            } else if (mm == 7) { month = 'July'; } else if (mm == 8) { month = 'August'; } else if (mm == 9) { month = 'September';
+            } else if (mm == 10) { month = 'October'; } else if (mm == 11) { month = 'November'; } else { month = 'December';}
+            today = month + ' ' + dd + ', ' + yyyy;
+          document.write(today);
+          </script>
+      </a>
+    </div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+</div>
