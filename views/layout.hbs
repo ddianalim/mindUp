@@ -14,25 +14,29 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   </head>
   <body>
-      <header>
-        <nav class="navbar navbar-light fixed-top bg-white">
-          <a class="navbar-brand" href="/">
-            <img src="/images/icon.png" width="27" height="27" class="d-inline-block align-center" alt="">
-            Mind Up
-          </a>
 
-          <div class="navbar-text">
-            {{# if currentUserId}}
-              <a class="nav-button username" href="/">{{username}}</a>
-              <a class="nav-button" href="/logout">Log Out</a>
-            {{else}}
-              <a class="nav-button" href="/login">Log In</a>
-            {{/if}}
-          </div>
-        </nav>
-      </header>
+    <nav class="navbar">
+      <div class="title">
+        <a class="navbar-brand" href="/">
+          <img class="logo" src="/images/icon.png" width=35px height=35px>
+          MindUp
+        </a>
+      </div>
+      <div class="name">
+        <a href="/days" class="username">{{username}}</a>
+      </div>
+      <div>
+        {{# if currentUserId}}
+        <a class="btn btn-primary" href="/logout">Log out</a>
+        {{else}}
+        <a class="btn btn-primary" href="/login">Log in</a>
+        {{/if}}
+      </div>
+    </nav>
+
     <main>
-    {{{body}}}
+      <br></br>
+      {{{body}}}
     </main>
   </body>
 
