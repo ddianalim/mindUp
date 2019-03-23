@@ -8,7 +8,7 @@ a {
 
 .heading {
   text-align: center;
-  padding: 25em;
+  margin: 25em;
 }
 
 /* Nav Bar */
@@ -37,4 +37,8 @@ a {
   margin-left: calc(-50vw + 50% - 8px);
   position: relative;
   color: white;
+}
+
+.navbar {
+  margin:-5px!important; 
 }
