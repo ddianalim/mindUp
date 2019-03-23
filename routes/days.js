@@ -1,23 +1,24 @@
 var express = require('express');
-var router = express.Router();
+const router = express.Router();
+
 const auth = require('./helpers/auth');
 const Day = require('../models/day');
 const User = require('../models/user');
 
-// Delete Days
-router.delete('/:id', auth.requireLogin, (req, res, next) => {
-  Day.findByIdAndDelete(req.params.id).then(() => {
-    return res.redirect('/days');
-  }).catch((err) => {
-    console.log(err.message);
-  });
+// // Delete Days
+// router.delete('/:id', auth.requireLogin, (req, res, next) => {
+//   Day.findByIdAndDelete(req.params.id).then(() => {
+//     return res.redirect('/days');
+//   }).catch((err) => {
+//     console.log(err.message);
+//   });
+//
+//   console.log(req.params.id);
+// })
 
-  console.log(req.params.id);
-})
-
-// Posts index
+// Days index
 router.get('/', auth.requireLogin, (req, res, next) => {
-  Day.find({users: res.locals.currentUserId}).sort({ date: -1 }).exec(function(err, days) {
+  Day.find({users: res.locals.currentUserId}).sort({ date: +1 }).exec(function(err, days) {
     if(err) {
       console.error(err);
     } else {
@@ -28,8 +29,8 @@ router.get('/', auth.requireLogin, (req, res, next) => {
 
 /* POST day. */
 router.post('/', auth.requireLogin, (req, res, next) => {
-  const day = new Day(req.body);
-  // day.users.push(req.session.userId);
+  let day = new Day(req.body);
+  day.users.push(req.session.userId);
 
   Day.create(day).then(() => {
     return res.redirect('/days');
@@ -37,13 +38,10 @@ router.post('/', auth.requireLogin, (req, res, next) => {
     console.log(err.message);
   });
 
-  // day.save(function(err, day) {
-  //   if (err) {
-  //     console.log(err);
-  //   }
-  //   //eslint-disable-next-line no-underscore-dangle
-  //   return res.redirect(`/days/${day._id}`);
-  //   // return res.redirect('/days/' + day._id);
+  // Day.save(function(err, day) {
+  //   console.log(day);
+  //   if (err) { console.error(err);}
+  //   return res.redirect('/days')
   // });
 });
 
@@ -66,9 +64,9 @@ router.get('/new', auth.requireLogin, (req, res, next) =>{
 //   });
 // });
 
-// Posts show
+// Days show
 router.get('/:id', auth.requireLogin, (req, res, next) => {
-  Day.findById(req.params.id, function(err, post) {
+  Day.findById(req.params.id, function(err, day) {
     if(err) { console.error(err) };
 
     res.render('days/show', { day: day });
