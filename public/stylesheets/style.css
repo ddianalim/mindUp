@@ -10,10 +10,6 @@ main {
   font-family: "HelveticaNeue-Light";
 }
 
-.tagline {
-  padding: 12em 0 0;
-}
-
 .heading {
   text-align: center;
   margin: 25em;
@@ -73,6 +69,7 @@ main {
 
 .tagline {
   font-size: 1.5em;
+  padding: 12em 0 0;
 }
 
 .parallax {
