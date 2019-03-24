@@ -6,11 +6,7 @@ main {
   font-family: "HelveticaNeue-Light";
 }
 
-.navbar-brand {
-  font-family: "HelveticaNeue-Light";
-}
-
-.navbar-text {
+.navbar {
   font-family: "HelveticaNeue-Light";
 }
 
@@ -100,4 +96,8 @@ main {
 .navbar {
   margin:-5px!important;
   padding-bottom: 0px!important;
+}
+
+.btn-outline {
+  border-color: grey;
 }
