@@ -1,13 +1,17 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "HelveticaNeue-Light", "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+main {
+  font-family: "HelveticaNeue-Light";
+}
+
+.navbar-brand {
+  font-family: "HelveticaNeue-Light";
 }
 
 .tagline {
-  padding: 7em 0;
+  padding: 12em 0 0;
 }
 
 .heading {
@@ -38,6 +42,7 @@ a {
 
 .calendar .item a {
   font-size: 15px;
+  color: black;
 }
 
 .calendar .item img {
@@ -55,6 +60,11 @@ a {
   margin-right: 1em;
 }
 
+.username:hover {
+  color: grey;
+  text-decoration: none;
+  font-style: italic;
+}
 
 /* Index page */
 .typer, .title {
