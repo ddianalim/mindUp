@@ -6,6 +6,10 @@ a {
   color: #00B7FF;
 }
 
+.tagline {
+  padding: 7em 0;
+}
+
 .heading {
   text-align: center;
   margin: 25em;
@@ -30,7 +34,7 @@ a {
 .parallax {
   background-color: #F4B4BB; /* For browsers that do not support gradients */
   background-image: linear-gradient(#F4B4BB, #FFDEAA); /* Standard syntax (must be last) */
-  min-height: 650px;
+  min-height: 700px;
   width: 100vw;
   margin-top: -2em;
   margin-bottom: 2em;
