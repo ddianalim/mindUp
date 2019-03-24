@@ -83,7 +83,7 @@ main {
 .parallax {
   background-color: #F4B4BB; /* For browsers that do not support gradients */
   background-image: linear-gradient(#F4B4BB, #FFDEAA); /* Standard syntax (must be last) */
-  min-height: 700px;
+  min-height: 800px;
   width: 100vw;
   margin-top: -2em;
   margin-bottom: 2em;
