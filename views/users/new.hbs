@@ -1,57 +1,40 @@
-<div id="center" class="d-flex justify-content-center">
-  <div class="text-center">
-    <form action="/users" method="post">
-      <legend>New User</legend>
+<div class="container">
+  <form action="/users" method="post">
+    <h1>New User</h1>
 
-      <div class="group">
-        <input type="text" name="username" id="user-username" autocomplete="off" required>
-        <label for="input" class="control-label">Username</label><i class="bar"></i>
-      </div>
+    <div class="form-group">
+      <input type="text" name="username" class="input-text" id="user-username" placeholder="Username" autocomplete="off" required>
+    </div>
 
-      <div class="group">
-        <input type="password" name="password" id="user-password" autocomplete="off" required>
-        <label for="input" class="control-label">Password</label><i class="bar"></i>
-      </div>
+    <div class="form-group">
+      <input type="password" name="password" class="input-text" placeholder="Password" id="password" autocomplete="off" required>
+    </div>
 
-      <div class="group">
-        <input class="form" type="password" required id="confirm_password" autocomplete="off" required>
-        <label for="input" class="control-label">Confirm Password</label><i class="bar"></i>
-      </div>
+    <div class="form-group">
+      <input type="password" class="input-text" placeholder="Confirm Password" id="confirm_password" autocomplete="off" required>
+    </div>
 
-      <script>
-        var password = document.getElementById("user-password");
-        var confirm_password = document.getElementById("confirm_password");
+    <div>
+      <button type="submit" class="pure-button pure-button-primary">Confirm</button>
+    </div>
 
-        function validatePassword() {
-          if (password.value != confirm_password.value) {
-            confirm_password.setCustomValidity("Passwords Don't Match");
-          }
-          else {
-            confirm_password.setCustomValidity('');
-          }
+    <script>
+      var password = document.getElementById("password");
+      var confirm_password = document.getElementById("confirm_password");
+
+      function validatePassword(){
+        if(password.value != confirm_password.value) {
+          confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+          confirm_password.setCustomValidity('');
         }
-        password.onchange = validatePassword;
-        confirm_password.onkeyup = validatePassword;
-        document.getElementById("user-username").addEventListener('blur', (e) => {
-          e.target.value ? e.target.classList.add("has-value") : e.target.classList.remove("has-value");
-        });
-        document.getElementById("user-password").addEventListener('blur', (e) => {
-          e.target.value ? e.target.classList.add("has-value") : e.target.classList.remove("has-value");
-        });
-        document.getElementById("confirm_password").addEventListener('blur', (e) => {
-          e.target.value ? e.target.classList.add("has-value") : e.target.classList.remove("has-value");
-        });
-      </script>
+      }
 
-      <div class="center2">
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-      <div>
-        <p>Have an account?
-          <a href="/login" style="font-weight: bold">Log In</a>
-        </p>
-      </div>
-
-    </form>
+      password.onchange = validatePassword;
+      confirm_password.onkeyup = validatePassword;
+    </script>
+  </form>
+  <div>
+    <p>Have an account? <a class="link" href="../login">Login</a></p>
   </div>
 </div>

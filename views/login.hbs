@@ -1,33 +1,19 @@
-<form action="/login" method="post">
-    <div id="center" class="d-flex justify-content-center">
-        <div class="text-center">
-            <legend>Log in</legend>
-
-            <div class='group'>
-                <input type="text" name="username" id="user-username">
-                <label for="input" class="control-label">Username</label><i class="bar"></i>
-            </div>
-            <div class='group'>
-                <input type="password" name="password" id="user-password">
-                <label for="input" class="control-label">Password</label><i class="bar"></i>
-            </div>
-            <div class = "center2">
-                <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-                <div>
-                    <p>Don't have an account?
-                        <a href="/users/new" style="font-weight: bold">Sign Up</a>
-                    </p>
-                </div>
-            </div>
-        </div>
+<div class="container">
+  <form action="/login" method="post">
+    <h1>Log in</h1>
+    <div class="form-group">
+      <input type="text" name="username" class="input-text" id="user-username" placeholder="username" autocomplete="off" required>
     </div>
-</form>
-<script>
-    document.getElementById("user-username").addEventListener('blur', (e) => {
-        e.target.value ? e.target.classList.add("has-value") : e.target.classList.remove("has-value");
-    });
-    document.getElementById("user-password").addEventListener('blur', (e) => {
-        e.target.value ? e.target.classList.add("has-value") : e.target.classList.remove("has-value");
-    });
-</script>
+
+    <div class="form-group">
+      <input type="password" name="password" class="input-text" id="user-password" placeholder="password" required>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+  <div>
+    <p>Don't have an account? <a class="link" href="../users/new">Sign Up</a></p>
+  </div>
+</div>
